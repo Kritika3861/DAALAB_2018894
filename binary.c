@@ -4,13 +4,15 @@ int binary(int arr[],int lb,int ub,int k)
 {
   int mid;
   mid=(lb+ub)/2;
+  while(lb<=ub){
   if(arr[mid]==k)
     return mid;
   else if(arr[mid]>k)
     return binary(arr,lb,mid-1,k);
   else
     return binary(arr,mid+1,ub,k);
-    
+  }
+  return -1;
 }
 int main()
 {
